@@ -1,0 +1,7 @@
+
+.idea/
+
+*.pyc
+*.txt
+
+draft.py
