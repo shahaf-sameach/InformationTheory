@@ -6,7 +6,7 @@ with open("dickens.txt", errors="ignore") as f:
     input_data = f.read().strip()
 
 
-h = HuffmanCoding()
+h = HuffmanCoding(input_data)
 
 compress = h.compress(input_data)
 print(len(compress))

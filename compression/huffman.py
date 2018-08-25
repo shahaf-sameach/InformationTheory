@@ -22,10 +22,12 @@ class HeapNode:
 
 
 class HuffmanCoding:
-    def __init__(self):
+    def __init__(self, text):
         self.heap = []
         self.codes = {}
         self.reverse_mapping = {}
+        self.frequency = self.make_frequency_dict(text)
+
 
     # functions for compression:
 
@@ -97,11 +99,7 @@ class HuffmanCoding:
         return b
 
     def compress(self, text):
-
-        text = text.rstrip()
-
-        frequency = self.make_frequency_dict(text)
-        self.make_heap(frequency)
+        self.make_heap(self.frequency)
         self.merge_nodes()
         self.make_codes()
 
